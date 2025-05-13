@@ -1,16 +1,22 @@
 import tkinter as tk
+from src.hexagon_grid import HexagonGrid
 
 # Create the main window
 root = tk.Tk()
-root.title('Hello World App')
+root.title('Reap what you sow event simulation')
 
-# Define the button click event
-def on_button_click():
-    print('Hello, World!')
+# Get the screen width and height
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
 
-# Create a button widget
-hello_button = tk.Button(root, text='Hello World', command=on_button_click)
-hello_button.pack(pady=20)
+# Set the window size to a wide screen format
+root.geometry(f'{screen_width}x{screen_height}')
+
+# Set minimum window size
+root.minsize(600, 600)
+
+# Create the grid
+hex_grid = HexagonGrid(root)
 
 # Run the application
 root.mainloop() 
